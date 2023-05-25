@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Website</title>
+  <style>
+    /* CSS for the navigation menu */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff; /* Set the background color of the page */
+    }
+    .header {
+      background-color: #ffffff;
+      padding: 10px;
+      text-align: center;
+    }
+    .navigation-menu {
+      display: none; /* Initially hide the navigation menu */
+      background-color: #f1f1f1;
+      padding: 10px;
+      text-align: center;
+      transform-style: preserve-3d;
+      perspective: 1000px; /* Adjust the perspective value as needed */
+    }
+    .navigation-button {
+      display: block;
+      background-color: blue; /* Set the background color of the button to blue */
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      margin: 10px;
+    }
+    .navigation-button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #ffffff; /* Set the color of the button lines to white */
+      margin-bottom: 5px;
+    }
+    .navigation-menu ul {
+      list-style-type: none;
+      padding: 0;
+      transform-style: preserve-3d;
+    }
+    .navigation-menu li {
+      margin-bottom: 10px;
+      transform-origin: top center;
+      transition: transform 0.3s ease-in-out;
+    }
+    .navigation-menu li:not(:last-child) {
+      border-bottom: 1px solid #ddd; /* Add a line between menu items */
+      padding-bottom: 10px; /* Optional: add spacing between the line and menu items */
+    }
+    .navigation-menu li:hover {
+      transform: rotateX(20deg); /* Adjust the rotation angle as needed */
+    }
+    .show-menu .navigation-menu {
+      display: block; /* Display the navigation menu when the button is clicked */
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <button id="navButton" class="navigation-button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="navigation-menu">
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+  <script>
+    // JavaScript to toggle the navigation menu
+    document.getElementById("navButton").addEventListener("click", function() {
+      document.body.classList.toggle("show-menu");
+    });
+  </script>
+</body>
+</html>
+
+
